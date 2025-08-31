@@ -6,14 +6,14 @@
 // criando funções/comandos
 
 //criar função para operações e definir variaveis
-void conta(char operador[20], int num1, int num2){
+void calculadora (char operador[20], int num1, int num2){
 
     //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro numero: "); 
     scanf ("%d \n", &num1);
 
     //receber a operação e atribuir ele a char "operador"
-    printf("defina a operação: soma, subtração, divisão ou multiplicação"); 
+    printf("defina a operação: soma(+), subtração(-), divisão(/) ou multiplicação(*) \n ou exit para sair \n"); 
     scanf ("%s \n", operador);
     
     //receber segundo número e atribuir ele ao int "num2"
@@ -25,35 +25,61 @@ void conta(char operador[20], int num1, int num2){
     float resultado = 0.0;
 
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
-    if (strcmp(operador, "soma") == 0) {
+    //soma
+    if (strcmp(operador, "+") == 0) {
         resultado = num1 + num2;
         printf("o resultado é %f \n", resultado);
     }
 
-    else if (strcmp(operador, "subtração") == 0) {
+    //subtração
+    else if (strcmp(operador, "-") == 0) {
         resultado = num1 - num2;
         printf("o resultado é %f \n", resultado);
     }
 
-    else if (strcmp(operador, "multiplicação") == 0) {
+    //multiplicação
+    else if (strcmp(operador, "*") == 0) {
         resultado = num1 * num2;
         printf("o resultado é %f \n", resultado);
     }
 
-    else if (strcmp(operador, "divisão") == 0) {
+    //divisão
+    else if (strcmp(operador, "/") == 0) {
         resultado = (float) num1 / num2;
         printf("o resultado é %f \n", resultado);
     }
 
+    //sair
     else if (strcmp(operador, "exit") == 0) {
 	    printf ("saindo");
 
     }
 
+    //caso o usuario tenha digitado algo diferente
     else {
-        printf ("Por Favor escolha uma das 4 operações: soma, subtração, divisão ou multiplicação");
+        printf ("Por Favor escolha uma das 4 operações (soma, subtração, divisão ou multiplicação) ou exit");
     }
 
+
+}
+//agora as funções para a agenda telefonica
+//criar função para o nome
+void nome(){
+	//criar um ponteiro para uma string
+	char nome [100];
+	//pedir ao usuario para digitar o nome do contato
+	printf ("digite o nome: ");
+	scanf  ("%s", nome);
+
+
+}
+
+//Criar função para a agenda telefonica
+void agenda (){
+	//chamar a função nome
+	void nome ();
+	//chamar a função numero
+	void numero();
 
 }
 // criar prompt de comando para interagir com o usuario usando as funções
