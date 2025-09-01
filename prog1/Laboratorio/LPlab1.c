@@ -51,21 +51,34 @@ void conta(char operador, int num1, int num2){
 
 
 }
-// criar prompt de comando para interagir com o usuario usando as funções
-//int main (void){
 
-    //char comando [100000];
+//criar uma função para a agenda
+void agenda(char nome[100], char telefone [10]){
+    //pedir para o usuario digitar o nome
+    printf("digite o nome do contato: ");
+    scanf("%s \n", nome);
+    //pedir para o usuario digitar o numero
+    printf("digite o número do contato: ");
+    scanf("%s \n", telefone);
+    //mostrar ao usuario a agenda e o nome
+    printf("Contato Salvo: Nome: %s ( Tel: %s) \n", nome, telefone);
+
+
+}
+//criar prompt de comando para interagir com o usuario usando as funções
+int main (void){
+
+    char comando [100000];
     //int a =10;
     //int result = 0;
-        //while (1){
-          //  printf ("myterm>");
-            //scanf  ("%s", comando);
-            //printf ("%s \n", comando);
-           // if (strcmp(comando, "conta") == 0) {conta ();}
-            //if (strcmp(comando, "agenda") == 0) {agenda ();}
-            //if (strcmp(comando, "nome") == 0) {nome ();}
-            //if (strcmp(comando, "telefone") == 0) {telefone ();}
-
+    while (1){
+           printf ("myterm>");
+           scanf  ("%s", comando);
+           printf ("%s \n", comando);
+           if (strcmp(comando, "conta") == 0) {conta ();}
+           if (strcmp(comando, "agenda") == 0) {agenda ();}
+    }
+}
 
 //}
 //}
