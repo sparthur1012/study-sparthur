@@ -1,4 +1,4 @@
-// incluir bibliotecas
+/// incluir bibliotecas
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -53,7 +53,7 @@ void conta(char operador, int num1, int num2){
 }
 
 //criar uma função para a agenda
-void agenda(char nome[100], char telefone [10]){
+void cadastrar_na_agenda(char nome[100], char telefone [10]){
     //pedir para o usuario digitar o nome
     printf("digite o nome do contato: ");
     scanf("%s \n", nome);
@@ -79,7 +79,3 @@ int main (void){
            if (strcmp(comando, "agenda") == 0) {agenda ();}
     }
 }
-
-//}
-//}
-
