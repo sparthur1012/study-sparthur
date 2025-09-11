@@ -9,6 +9,12 @@ char comandos[100];
 
 // criando funções/comandos
 
+// Função para limpar o buffer de entrada (corrigindo bugs de terminal)
+void limpar_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
 //criar função para operações e definir variaveis
 void calc(){
     
@@ -21,13 +27,16 @@ void calc(){
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
     scanf ("%s \n", operador);
     
+    
     //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
     scanf ("%d \n", &num1);
+    limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
     scanf ("%d \n", &num2);
+    limpar_buffer();
 
     //criar um float para o resultado
 
