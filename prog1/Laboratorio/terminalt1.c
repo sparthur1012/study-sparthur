@@ -27,8 +27,9 @@ void calc(){
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
     scanf ("%s \n", operador);
     
-    
-    //receber primeiro número e atribuir ele ao int "num1"
+    //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
+    if (strcmp(operador, "+") == 0) {
+            //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
     scanf ("%d \n", &num1);
     limpar_buffer();
@@ -37,27 +38,53 @@ void calc(){
     printf("segundo número:"); 
     scanf ("%d \n", &num2);
     limpar_buffer();
-
-    //criar um float para o resultado
-
-
-    //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
-    if (strcmp(operador, "+") == 0) {
+    
         resultado = (float) num1 + num2;
         printf("o resultado é %f \n", resultado);
     }
     
     else if (strcmp(operador, "-") == 0) {
+            //receber primeiro número e atribuir ele ao int "num1"
+    printf("primeiro número: "); 
+    scanf ("%d \n", &num1);
+    limpar_buffer();
+    
+    //receber segundo número e atribuir ele ao int "num2"
+    printf("segundo número:"); 
+    scanf ("%d \n", &num2);
+    limpar_buffer();
+    
         resultado = (float) num1 - num2;
         printf("o resultado é %f \n", resultado);
     }
 
     else if (strcmp(operador, "*") == 0) {
+            //receber primeiro número e atribuir ele ao int "num1"
+    printf("primeiro número: "); 
+    scanf ("%d \n", &num1);
+    limpar_buffer();
+    
+    //receber segundo número e atribuir ele ao int "num2"
+    printf("segundo número:"); 
+    scanf ("%d \n", &num2);
+    limpar_buffer();
+    
         resultado = (float) num1 * num2 ;
         printf("o resultado é %f \n", resultado);
     }
 
     else if (strcmp(operador, "/") == 0) {
+        
+            //receber primeiro número e atribuir ele ao int "num1"
+    printf("primeiro número: "); 
+    scanf ("%d \n", &num1);
+    limpar_buffer();
+    
+    //receber segundo número e atribuir ele ao int "num2"
+    printf("segundo número:"); 
+    scanf ("%d \n", &num2);
+    limpar_buffer();
+    
         resultado = (float) num1 / num2;
         printf("o resultado é %f \n", resultado);
     }
@@ -95,10 +122,8 @@ int main (void){
     //int result = 0;
     while (1){
            printf ("myterm>");
-           if(fgets (comandos, sizeof(comandos), stdin) == NULL) {
-               break;
-           }
-           comandos[strcspn (comandos, "\n")] = 0;
+           if(scanf ("%99s", comandos) ! == 1) {break;}
+           limpar_buffer ();
            
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
