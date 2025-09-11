@@ -25,7 +25,7 @@ void calc(){
     scanf ("%d \n", &num1);
     
     //receber segundo número e atribuir ele ao int "num2"
-    printf("qual o segundo número?"); 
+    printf("segundo número:"); 
     scanf ("%d \n", &num2);
 
     //criar um float para o resultado
