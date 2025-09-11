@@ -11,6 +11,10 @@ char comandos[100];
 
 //criar função para operações e definir variaveis
 void calc(){
+    
+    //declarar variaveis da calculadora
+    char operador[100];
+    int num1, num2;
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação: soma(+), subtração(-), divisão(/) e multiplicação(*)"); 
@@ -59,8 +63,11 @@ void calc(){
 }
 
 //criar uma função para a agenda
-void cadastrar_na_agenda(char nome[100], char telefone [10]){
+void cadastrar_na_agenda(){
     //pedir para o usuario digitar o nome
+    char nome[100];
+    char telefone[20];
+    
     printf("digite o nome do contato: ");
     scanf("%s \n", nome);
     //pedir para o usuario digitar o numero
