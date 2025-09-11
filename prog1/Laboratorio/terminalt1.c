@@ -10,7 +10,7 @@ char comandos[100];
 // criando funções/comandos
 
 //criar função para operações e definir variaveis
-void calc(char operador[100], int num1, int num2){
+void calc(){
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação: soma(+), subtração(-), divisão(/) e multiplicação(*)"); 
@@ -31,26 +31,26 @@ void calc(char operador[100], int num1, int num2){
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
         resultado = (float) num1 + num2;
-        printf("o resultado é %f \n", &resultado);
+        printf("o resultado é %f \n", resultado);
     }
     
     else if (strcmp(operador, "-") == 0) {
         resultado = (float) num1 - num2;
-        printf("o resultado é %f \n", &resultado);
+        printf("o resultado é %f \n", resultado);
     }
 
     else if (strcmp(operador, "*") == 0) {
         resultado = (float) num1 * num2 ;
-        printf("o resultado é %f \n", &resultado);
+        printf("o resultado é %f \n", resultado);
     }
 
-    else if (strcmp(operador, "/") == 1) {
+    else if (strcmp(operador, "/") == 0) {
         resultado = (float) num1 / num2;
-        printf("o resultado é %f \n", &resultado);
+        printf("o resultado é %f \n", resultado);
     }
     
-    else if (strcmp(operador, "exit") == 1) {
-        break
+    else if (strcmp(operador, "exit") == 0) {
+        return
     }
 
     else {
@@ -69,8 +69,8 @@ void cadastrar_na_agenda(char nome[100], char telefone [10]){
     //mostrar ao usuario a agenda e o nome
     printf("Contato Salvo: Nome: %s (Tel: %s) \n", nome, telefone);
     
-    if (strcmp(nome, "exit") == 1){break;}
-    if (strcmp(telefone, "exit") == 1){break;}
+    if (strcmp(nome, "exit") == 0){return;}
+    if (strcmp(telefone, "exit") == 0){return;}
 }
 
 //criar prompt de comando para interagir com o usuario usando as funções
@@ -86,10 +86,7 @@ int main (void){
            comandos[strcspn (comandos, "\n")] = 0,
            
            printf ("%s \n", comandos);
-           if (strcmp(comandos, "calc") == 0){
-           while (1)
-           {calc ();}}
-           if (strcmp(comandos, "agenda") == 0){
-               while(1) {agenda ();}}
+           if (strcmp(comandos, "calc") == 0) {calc();}
+           if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
         }
 }
