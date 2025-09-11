@@ -17,7 +17,7 @@ void calc(){
     int num1, num2;
 
     //receber a operação e atribuir ele a char "operador"
-    printf("defina a operação: soma(+), subtração(-), divisão(/) e multiplicação(*)"); 
+    printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
     scanf ("%s \n", operador);
     
     //receber primeiro número e atribuir ele ao int "num1"
