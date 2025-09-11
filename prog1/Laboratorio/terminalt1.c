@@ -89,7 +89,7 @@ int main (void){
            if(fgets (comandos, sizeof(comandos), stdin) == NULL) {
                break;
            }
-           comandos[strcspn (comandos, "\n")] = 0,
+           comandos[strcspn (comandos, "\n")] = 0;
            
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
