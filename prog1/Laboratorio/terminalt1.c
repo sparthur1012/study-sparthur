@@ -104,15 +104,17 @@ void cadastrar_na_agenda(){
     {
       //pedir para o usuario digitar o nome
     char nome[100];
-    char telefone[20];
+    char telefone[10];
     
     printf("digite o nome do contato: ");
-    scanf("%s \n", nome);
+    scanf("%s", nome);
+    limpar_buffer();
     //pedir para o usuario digitar o numero
     printf("digite o número do contato: ");
-    scanf("%s \n", telefone);
+    scanf("%s", telefone);
+    limpar_buffer();
     //mostrar ao usuario a agenda e o nome
-    printf("Contato Salvo: Nome: %s (Tel: %s) \n", nome, telefone);
+    printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone);
     
     if (strcmp(nome, "exit") == 0){break;}
     if (strcmp(telefone, "exit") == 0){break;} 
@@ -129,7 +131,8 @@ int main (void){
     while (1){
            printf ("myterm>");
            if(scanf ("%99s", comandos) != 1) {break;}
-           limpar_buffer ();
+           
+	   limpar_buffer ();
            
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
