@@ -93,5 +93,7 @@ int main (void){
            
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
+           if (strcmp (comandos, "exit") == 0){return 0;}
         }
+        
 }
