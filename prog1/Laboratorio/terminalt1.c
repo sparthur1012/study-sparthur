@@ -91,7 +91,6 @@ int main (void){
            }
            comandos[strcspn (comandos, "\n")] = 0,
            
-           printf ("%s \n", comandos);
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
         }
