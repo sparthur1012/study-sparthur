@@ -17,6 +17,7 @@ void limpar_buffer() {
 
 //criar função para operações e definir variaveis
 void calc(){
+    while (1){
     
     //declarar variaveis da calculadora
     char operador[1];
@@ -25,18 +26,18 @@ void calc(){
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
-    scanf ("%s ", operador);
+    scanf ("%s", operador);
     
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d ", &num1);
+    scanf ("%d", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d ", &num2);
+    scanf ("%d", &num2);
     limpar_buffer();
     
         resultado = (float) num1 + num2;
@@ -46,7 +47,7 @@ void calc(){
     else if (strcmp(operador, "-") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d ", &num1);
+    scanf ("%d", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
@@ -61,12 +62,12 @@ void calc(){
     else if (strcmp(operador, "*") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d ", &num1);
+    scanf ("%d", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d ", &num2);
+    scanf ("%d", &num2);
     limpar_buffer();
     
         resultado = (float) num1 * num2 ;
@@ -77,12 +78,12 @@ void calc(){
         
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d ", &num1);
+    scanf ("%d", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d ", &num2);
+    scanf ("%d", &num2);
     limpar_buffer();
     
         resultado = (float) num1 / num2;
@@ -90,16 +91,18 @@ void calc(){
     }
     
     else if (strcmp(operador, ".") == 0) {
-        return;}
+        break;}
 
     else {
         printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
     }
-}
+    }}
 
 //criar uma função para a agenda
 void cadastrar_na_agenda(){
-    //pedir para o usuario digitar o nome
+    while (1)
+    {
+      //pedir para o usuario digitar o nome
     char nome[100];
     char telefone[20];
     
@@ -111,8 +114,11 @@ void cadastrar_na_agenda(){
     //mostrar ao usuario a agenda e o nome
     printf("Contato Salvo: Nome: %s (Tel: %s) \n", nome, telefone);
     
-    if (strcmp(nome, "exit") == 0){return;}
-    if (strcmp(telefone, "exit") == 0){return;}
+    if (strcmp(nome, "exit") == 0){break;}
+    if (strcmp(telefone, "exit") == 0){break;} 
+    }
+    
+    
 }
 
 //criar prompt de comando para interagir com o usuario usando as funções
