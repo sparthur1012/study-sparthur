@@ -122,7 +122,7 @@ int main (void){
     //int result = 0;
     while (1){
            printf ("myterm>");
-           if(scanf ("%99s", comandos) ! == 1) {break;}
+           if(scanf ("%99s", comandos) ! = 1) {break;}
            limpar_buffer ();
            
            if (strcmp(comandos, "calc") == 0) {calc();}
