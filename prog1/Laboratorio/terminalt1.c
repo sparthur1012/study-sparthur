@@ -1,4 +1,5 @@
-/// incluir bibliotecas
+//nosso objetivo é criar um terminal utilizando o C
+// incluir bibliotecas
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -6,14 +7,14 @@
 // criando funções/comandos
 
 //criar função para operações e definir variaveis
-void conta(char operador, int num1, int num2){
+void conta(char operador[1], int num1, int num2){
 
     //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro numero: "); 
+    printf("primeiro número: "); 
     scanf ("%d \n", &num1);
 
     //receber a operação e atribuir ele a char "operador"
-    printf("defina a operação: soma, subtração, divisão ou multiplicação"); 
+    printf("defina a operação: soma(+), subtração(-), divisão(/) e multiplicação(*)"); 
     scanf ("%f \n", operador);
     
     //receber segundo número e atribuir ele ao int "num2"
@@ -25,28 +26,28 @@ void conta(char operador, int num1, int num2){
     float resultado = 0.0
 
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
-    if (strcmp(operador, "soma") == 0) {
-        num1 + num2 = resultado;
+    if (strcmp(operador, "+") == 0) {
+        resultado = (float) num1 + num2;
         printf("o resultado é %f \n", &resultado);
     }
 
-    else if (strcmp(operador, "subtração") == 0) {
-        num1 - num2 = resultado;
+    else if (strcmp(operador, "-") == 0) {
+        resultado = (float) num1 - num2;
         printf("o resultado é %f \n", &resultado);
     }
 
-    else if (strcmp(operador, "multiplicação") == 0) {
-        num1 * num2 = resultado;
+    else if (strcmp(operador, "*") == 0) {
+        resultado = (float) num1 * num2 ;
         printf("o resultado é %f \n", &resultado);
     }
 
-    else if (strcmp(operador, "divisão") == 1) {
-        (float) num1 / num2 = resultado;
+    else if (strcmp(operador, "/") == 1) {
+        resultado = (float) num1 / num2;
         printf("o resultado é %f \n", &resultado);
     }
 
     else {
-        printf ("Por Favor escolha uma das 4 operações: soma, subtração, divisão ou multiplicação");
+        printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
     }
 
 
@@ -61,14 +62,14 @@ void cadastrar_na_agenda(char nome[100], char telefone [10]){
     printf("digite o número do contato: ");
     scanf("%s \n", telefone);
     //mostrar ao usuario a agenda e o nome
-    printf("Contato Salvo: Nome: %s ( Tel: %s) \n", nome, telefone);
+    printf("Contato Salvo: Nome: %s (Tel: %s) \n", nome, telefone);
 
 
 }
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
 
-    char comando [100000];
+    char comando [10000];
     //int a =10;
     //int result = 0;
     while (1){
