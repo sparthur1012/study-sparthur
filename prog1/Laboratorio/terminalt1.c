@@ -13,8 +13,9 @@ char comandos[100];
 void calc(){
     
     //declarar variaveis da calculadora
-    char operador[100];
+    char operador[1];
     int num1, num2;
+    float resultado = 0.0;
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
@@ -30,7 +31,6 @@ void calc(){
 
     //criar um float para o resultado
 
-    float resultado = 0.0;
 
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
@@ -53,7 +53,7 @@ void calc(){
         printf("o resultado é %f \n", resultado);
     }
     
-    else if (strcmp(operador, "exit") == 0) {
+    else if (strcmp(operador, ".") == 0) {
         return;}
 
     else {
