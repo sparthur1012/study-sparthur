@@ -4,18 +4,22 @@
 #include <string.h>
 #include <stdlib.h>
 
+//area para definir variaveis universais
+define char comandos[100];
+
+
 // criando funções/comandos
 
 //criar função para operações e definir variaveis
-void conta(char operador[1], int num1, int num2){
-
-    //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro número: "); 
-    scanf ("%d \n", &num1);
+void conta(char operador[100], int num1, int num2){
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação: soma(+), subtração(-), divisão(/) e multiplicação(*)"); 
     scanf ("%f \n", operador);
+    
+    //receber primeiro número e atribuir ele ao int "num1"
+    printf("primeiro número: "); 
+    scanf ("%d \n", &num1);
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("qual o segundo número?"); 
@@ -45,6 +49,10 @@ void conta(char operador[1], int num1, int num2){
         resultado = (float) num1 / num2;
         printf("o resultado é %f \n", &resultado);
     }
+    
+    else if (strcmp(operador, "exit") == 1) {
+        break
+    }
 
     else {
         printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
@@ -69,13 +77,16 @@ void cadastrar_na_agenda(char nome[100], char telefone [10]){
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
 
-    char comando [10000];
     //int a =10;
     //int result = 0;
     while (1){
            printf ("myterm>");
-           scanf  ("%s", comando);
-           printf ("%s \n", comando);
+           if(fgets (comandos, sizeof(comandos), stdin) == NULL;) {
+               break;
+           }
+           comandos[strcspn (comandos, "\n")] = 0,
+           
+           printf ("%s \n", comandos);
            if (strcmp(comando, "conta") == 0) {conta ();}
            if (strcmp(comando, "agenda") == 0) {agenda ();}
     }
