@@ -54,8 +54,7 @@ void calc(){
     }
     
     else if (strcmp(operador, "exit") == 0) {
-        return
-    }
+        return;}
 
     else {
         printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
