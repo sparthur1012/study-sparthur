@@ -25,18 +25,18 @@ void calc(){
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
-    scanf ("%s \n", operador);
+    scanf ("%s ", operador);
     
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d \n", &num1);
+    scanf ("%d ", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d \n", &num2);
+    scanf ("%d ", &num2);
     limpar_buffer();
     
         resultado = (float) num1 + num2;
@@ -46,12 +46,12 @@ void calc(){
     else if (strcmp(operador, "-") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d \n", &num1);
+    scanf ("%d ", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d \n", &num2);
+    scanf ("%d ", &num2);
     limpar_buffer();
     
         resultado = (float) num1 - num2;
@@ -61,12 +61,12 @@ void calc(){
     else if (strcmp(operador, "*") == 0) {
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d \n", &num1);
+    scanf ("%d ", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d \n", &num2);
+    scanf ("%d ", &num2);
     limpar_buffer();
     
         resultado = (float) num1 * num2 ;
@@ -77,12 +77,12 @@ void calc(){
         
             //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
-    scanf ("%d \n", &num1);
+    scanf ("%d ", &num1);
     limpar_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número:"); 
-    scanf ("%d \n", &num2);
+    scanf ("%d ", &num2);
     limpar_buffer();
     
         resultado = (float) num1 / num2;
