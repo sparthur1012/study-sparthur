@@ -7,7 +7,6 @@
 //area para definir variaveis universais
 define char comandos[100];
 
-
 // criando funções/comandos
 
 //criar função para operações e definir variaveis
@@ -57,8 +56,6 @@ void conta(char operador[100], int num1, int num2){
     else {
         printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
     }
-
-
 }
 
 //criar uma função para a agenda
@@ -71,9 +68,11 @@ void cadastrar_na_agenda(char nome[100], char telefone [10]){
     scanf("%s \n", telefone);
     //mostrar ao usuario a agenda e o nome
     printf("Contato Salvo: Nome: %s (Tel: %s) \n", nome, telefone);
-
-
+    
+    if (strcmp(nome, "exit") == 1){break;}
+    if (strcmp(telefone, "exit" == 1){break;}
 }
+
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
 
@@ -87,7 +86,7 @@ int main (void){
            comandos[strcspn (comandos, "\n")] = 0,
            
            printf ("%s \n", comandos);
-           if (strcmp(comando, "conta") == 0) {conta ();}
-           if (strcmp(comando, "agenda") == 0) {agenda ();}
-    }
+           if (strcmp(comandos, "conta") == 0) {conta ();}
+           if (strcmp(comandos, "agenda") == 0) {agenda ();}
+        }
 }
