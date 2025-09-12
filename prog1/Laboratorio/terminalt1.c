@@ -8,7 +8,6 @@
 char comandos[100];
 
 // criando funções/comandos
-
 // Função para limpar o buffer de entrada (corrigindo bugs de terminal)
 void limpar_buffer() {
     int c;
@@ -18,85 +17,46 @@ void limpar_buffer() {
 //criar função para operações e definir variaveis
 void calc(){
     while (1){
-    
     //declarar variaveis da calculadora
-    char operador[1];
+    char operador[10];
     int num1, num2;
     float resultado = 0.0;
 
     //receber a operação e atribuir ele a char "operador"
     printf("defina a operação (soma(+), subtração(-), divisão(/) e multiplicação(*)): \n"); 
     scanf ("%s", operador);
+
+    //verificar se o usuário deseja sair
+    if (strcmp(operador, "exit") == 0) {break;}
+
+     //receber primeiro número e atribuir ele ao int "num1"
+    printf("primeiro número: "); 
+    scanf ("%d", &num1);
+    limpar_buffer();
     
+    //receber segundo número e atribuir ele ao int "num2"
+    printf("segundo número: "); 
+    scanf ("%d", &num2);
+    limpar_buffer();
+
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
-            //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro número: "); 
-    scanf ("%d", &num1);
-    limpar_buffer();
-    
-    //receber segundo número e atribuir ele ao int "num2"
-    printf("segundo número:"); 
-    scanf ("%d", &num2);
-    limpar_buffer();
-    
         resultado = (float) num1 + num2;
-        printf("o resultado é %f \n", resultado);
-    }
+        printf("o resultado é %f \n", resultado);}
     
-    else if (strcmp(operador, "-") == 0) {
-            //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro número: "); 
-    scanf ("%d", &num1);
-    limpar_buffer();
-    
-    //receber segundo número e atribuir ele ao int "num2"
-    printf("segundo número:"); 
-    scanf ("%d ", &num2);
-    limpar_buffer();
-    
+    else if (strcmp(operador, "-") == 0) {    
         resultado = (float) num1 - num2;
-        printf("o resultado é %f \n", resultado);
-    }
+        printf("o resultado é %f \n", resultado);}
 
     else if (strcmp(operador, "*") == 0) {
-            //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro número: "); 
-    scanf ("%d", &num1);
-    limpar_buffer();
-    
-    //receber segundo número e atribuir ele ao int "num2"
-    printf("segundo número:"); 
-    scanf ("%d", &num2);
-    limpar_buffer();
-    
         resultado = (float) num1 * num2 ;
-        printf("o resultado é %f \n", resultado);
-    }
+        printf("o resultado é %f \n", resultado);}
 
     else if (strcmp(operador, "/") == 0) {
-        
-            //receber primeiro número e atribuir ele ao int "num1"
-    printf("primeiro número: "); 
-    scanf ("%d", &num1);
-    limpar_buffer();
-    
-    //receber segundo número e atribuir ele ao int "num2"
-    printf("segundo número:"); 
-    scanf ("%d", &num2);
-    limpar_buffer();
-    
         resultado = (float) num1 / num2;
-        printf("o resultado é %f \n", resultado);
-    }
-    
-    else if (strcmp(operador, ".") == 0) {
-        break;}
+        printf("o resultado é %f\n", resultado);}
 
-    else {
-        printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");
-    }
-    }}
+    else {printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");}    }}
 
 //criar uma função para a agenda
 void cadastrar_na_agenda(){
@@ -109,19 +69,16 @@ void cadastrar_na_agenda(){
     printf("digite o nome do contato: ");
     scanf("%s", nome);
     limpar_buffer();
+    //verificar se o usuário deseja sair
+    if (strcmp(nome, "exit") == 0){break;}
+
     //pedir para o usuario digitar o numero
     printf("digite o número do contato: ");
     scanf("%s", telefone);
     limpar_buffer();
+    
     //mostrar ao usuario a agenda e o nome
-    printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone);
-    
-    if (strcmp(nome, "exit") == 0){break;}
-    if (strcmp(telefone, "exit") == 0){break;} 
-    }
-    
-    
-}
+    printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone);}}
 
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
@@ -131,12 +88,7 @@ int main (void){
     while (1){
            printf ("myterm>");
            if(scanf ("%99s", comandos) != 1) {break;}
-           
-	   limpar_buffer ();
-           
+           limpar_buffer ();
            if (strcmp(comandos, "calc") == 0) {calc();}
            if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
-           if (strcmp (comandos, "exit") == 0){return 0;}
-        }
-        
-}
+           if (strcmp (comandos, "exit") == 0){return 0;}}}
