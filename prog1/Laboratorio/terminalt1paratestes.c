@@ -7,7 +7,23 @@
 //area para definir variaveis universais
 char comandos[100];
 
-// criando funções/comandos
+//criar prompt de comando para interagir com o usuario usando as funções
+int main (void){
+
+    //int a =10;
+    //int result = 0;
+    while (1){
+           printf ("myterm>");
+           if(scanf ("%99s", comandos) != 1) {break;}
+           
+	   limpar_buffer ();
+           
+           if (strcmp(comandos, "calc") == 0) {calc();}
+           if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
+           if (strcmp (comandos, "exit") == 0){return 0;}
+        }}
+        
+    // criando funções/comandos
 // Função para limpar o buffer de entrada (corrigindo bugs de terminal)
 void limpar_buffer() {
     int c;
@@ -78,19 +94,3 @@ void cadastrar_na_agenda(){
     if (strcmp(nome, "exit") == 0){break;}
     if (strcmp(telefone, "exit") == 0){break;} 
     }}
-
-//criar prompt de comando para interagir com o usuario usando as funções
-int main (void){
-
-    //int a =10;
-    //int result = 0;
-    while (1){
-           printf ("myterm>");
-           if(scanf ("%99s", comandos) != 1) {break;}
-           
-	   limpar_buffer ();
-           
-           if (strcmp(comandos, "calc") == 0) {calc();}
-           if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
-           if (strcmp (comandos, "exit") == 0){return 0;}
-        }}
