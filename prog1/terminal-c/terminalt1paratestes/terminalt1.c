@@ -119,7 +119,9 @@ void calc(){
 
     //criar um loop para ler todos os contatos ao mesmo tempo
     while (fgets(lendo_agenda, 100, arquivoagenda) != NULL){
-    printf ("%s", lendo_agenda);}}
+    printf ("%s", lendo_agenda);
+        break;
+    }}
 
 //__________________________________________________________________________________
 
