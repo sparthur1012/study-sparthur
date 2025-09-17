@@ -129,7 +129,7 @@ void agenda(){
     //criar variavel para ler o comando do usuario
     char agenda_cmd[10];
     printf ("salvar ou verificar?");
-    scanf ("%s\n", agenda_cmd);
+    scanf ("%s", agenda_cmd);
     clean_buffer();
 
     if (strcmp(agenda_cmd, "exit") == 0){return;}
