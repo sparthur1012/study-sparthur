@@ -110,7 +110,7 @@ void calc(){
     FILE *arquivoagenda;
     arquivoagenda = fopen ("arquivoagenda.txt", "r");
     //verificar se o arquivo foi aberto corretamente
-        if (arquivoagenda != NULL){
+        if (arquivoagenda == NULL){
             //avisar o usuario em caso de erro
             printf ("erro ao abrir a agenda");
             return;}
@@ -118,7 +118,7 @@ void calc(){
     char lendo_agenda [1000];
 
     //criar um loop para ler todos os contatos ao mesmo tempo
-    while (fgets(lendo_agenda, 100, arquivoagenda) == NULL){
+    while (fgets(lendo_agenda, 100, arquivoagenda) != NULL){
     printf ("%s", lendo_agenda);}}
 
 //__________________________________________________________________________________
