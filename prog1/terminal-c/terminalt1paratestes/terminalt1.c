@@ -14,8 +14,7 @@ int main (void){
     //int result = 0;
     while (1){
            printf ("myterm>");
-           if(scanf ("%99s", comand) != 1) {break;}
-           
+           if(scanf ("%99s", comand) != 1) {break;}           
 	   clean_buffer ();
            
            if (strcmp(comand, "calc") == 0) {calc();}
@@ -23,7 +22,7 @@ int main (void){
            if (strcmp (comand, "exit") == 0){return 0;}
         }}
         
-    // criando funções/comand
+    // criando funções/comandos
 // Função para limpar o buffer de entrada (corrigindo bugs de terminal)
 void clean_buffer() {
     int c;
@@ -75,8 +74,17 @@ void calc(){
 
 //criar uma função para a agenda
 void agenda(){
-    
+    //pedir ao usuario que decida se quer ler ou salvar um novo contato
+    //criar variacel para ler o comando do usuario
+    char agenda_cmd[10];
+    printf ("salvar ou verificar?");
+    scanf ("%s\n", agenda_cmd);
+    clean_buffer();
 
+    if (strcmp(agenda_cmd, "exit") == 0){break}
+    if (strcmp(agenda_cmd, "salvar") == 0){criar_contato();}
+    if (strcmp(agenda_cmd, "verificar") == 0){ler_agenda();}
+}
     //criar uma função para salvar os contatos em um arquivo de texto
     void criar_contato(){
 
@@ -111,8 +119,23 @@ void agenda(){
         fclose(arquivoagenda);
 
     //mostrar ao usuario a agenda e o nome
-    printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone);
-    }
+    printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone)}    
+    //criar função para ler arquivos da agenda
+    void ler_agenda() {
 
-    void ler_agenda()
+    //acessar arquivo da agenda
+    FILE *arquivoagenda;
+    arquivoagenda = fopen ("arquivoagenda.txt", "r");
+    //verificar se o arquivo foi aberto corretamente
+        if (arquivoagenda == NULL){
+            //avisar o usuario em caso de erro
+            printf ("erro ao abrir a agenda");
+            return;}
+    //criar variavel par receber o string do contato
+    char lendo_agenda [1000];
+
+    //criar um loop para ler todos os contatos ao mesmo tempo
+    while (fgets(lendo_agenda, 100, arquivoagenda) == NULL){
+    printf ("%s", lendo_agenda);
+    }}
 }
