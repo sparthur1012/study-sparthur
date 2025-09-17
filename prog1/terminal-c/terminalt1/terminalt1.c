@@ -83,8 +83,6 @@ void cadastrar_na_agenda(){
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
 
-    //int a =10;
-    //int result = 0;
     while (1){
            printf ("myterm>");
            if(scanf ("%99s", comandos) != 1) {break;}
