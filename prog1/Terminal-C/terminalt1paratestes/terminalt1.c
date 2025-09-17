@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 //area para definir variaveis universais
-char comandos[100];
+char comand[100];
 
 //criar prompt de comando para interagir com o usuario usando as funções
 int main (void){
@@ -14,18 +14,18 @@ int main (void){
     //int result = 0;
     while (1){
            printf ("myterm>");
-           if(scanf ("%99s", comandos) != 1) {break;}
+           if(scanf ("%99s", comand) != 1) {break;}
            
-	   limpar_buffer ();
+	   clean_buffer ();
            
-           if (strcmp(comandos, "calc") == 0) {calc();}
-           if (strcmp(comandos, "agenda") == 0) {cadastrar_na_agenda ();}
-           if (strcmp (comandos, "exit") == 0){return 0;}
+           if (strcmp(comand, "calc") == 0) {calc();}
+           if (strcmp(comand, "agenda") == 0) {agenda ();}
+           if (strcmp (comand, "exit") == 0){return 0;}
         }}
         
-    // criando funções/comandos
+    // criando funções/comand
 // Função para limpar o buffer de entrada (corrigindo bugs de terminal)
-void limpar_buffer() {
+void clean_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);}
 
@@ -47,12 +47,12 @@ void calc(){
      //receber primeiro número e atribuir ele ao int "num1"
     printf("primeiro número: "); 
     scanf ("%d", &num1);
-    limpar_buffer();
+    clean_buffer();
     
     //receber segundo número e atribuir ele ao int "num2"
     printf("segundo número: "); 
     scanf ("%d", &num2);
-    limpar_buffer();
+    clean_buffer();
 
     //comparar o operador com as respostas esperadas (strcmp) e realizar a operação atravéz disso
     if (strcmp(operador, "+") == 0) {
@@ -74,8 +74,13 @@ void calc(){
     else {printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");}}}
 
 //criar uma função para a agenda
-void cadastrar_na_agenda(){
-    while (1)
+void agenda(){
+    
+
+    //criar uma função para salvar os contatos em um arquivo de texto
+    void criar_contato(){
+
+        while (1)
     {
       //pedir para o usuario digitar o nome
     char nome[100];
@@ -83,14 +88,31 @@ void cadastrar_na_agenda(){
     
     printf("digite o nome do contato: ");
     scanf("%s", nome);
-    limpar_buffer();
+    clean_buffer();
+    if (strcmp(nome, "exit") == 0){break;}
+    
     //pedir para o usuario digitar o numero
     printf("digite o número do contato: ");
     scanf("%s", telefone);
-    limpar_buffer();
+    clean_buffer();
+
+    //criar um arquivo para a agenda
+    FILE *arquivoagenda;
+        //abrir o arquivo em modo de anexação
+        arquivoagenda = fopen("arquivoagenda.txt", "a");
+        //verificar se o arquivo foi aberto corretamente
+        if (arquivoagenda == NULL){
+            //avisar o usuario em caso de erro
+            printf ("erro ao abrir a agenda");
+            return;
+        }
+        //salvar o contato no arquivo
+        fprintf(arquivoagenda, "Nome: %s Tel: %s\n", nome, telefone);
+        fclose(arquivoagenda);
+
     //mostrar ao usuario a agenda e o nome
     printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone);
-    
-    if (strcmp(nome, "exit") == 0){break;}
-    if (strcmp(telefone, "exit") == 0){break;} 
-    }}
+    }
+
+    void ler_agenda()
+}
