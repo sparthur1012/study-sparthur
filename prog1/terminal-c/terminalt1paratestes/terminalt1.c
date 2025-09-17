@@ -157,5 +157,4 @@ int main (void){
            if (strcmp(comand, "calc") == 0) {calc();}
            if (strcmp(comand, "agenda") == 0) {agenda ();}
            if (strcmp(comand, "exit") == 0){return 0;}}}
-           
 //fim do codigo
