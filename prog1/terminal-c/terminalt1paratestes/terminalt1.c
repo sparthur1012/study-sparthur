@@ -4,29 +4,20 @@
 #include <string.h>
 #include <stdlib.h>
 
+//_____________________________________________________________________________________
+
 //area para definir variaveis universais
 char comand[100];
 
-//criar prompt de comando para interagir com o usuario usando as funções
-int main (void){
+//_____________________________________________________________________________________
+// criando funções/comandos
 
-    //int a =10;
-    //int result = 0;
-    while (1){
-           printf ("myterm>");
-           if(scanf ("%99s", comand) != 1) {break;}           
-	   clean_buffer ();
-           
-           if (strcmp(comand, "calc") == 0) {calc();}
-           if (strcmp(comand, "agenda") == 0) {agenda ();}
-           if (strcmp (comand, "exit") == 0){return 0;}
-        }}
-        
-    // criando funções/comandos
 // Função para limpar o buffer de entrada (corrigindo bugs de terminal)
 void clean_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);}
+    
+//_____________________________________________________________________________________
 
 //criar função para operações e definir variaveis
 void calc(){
@@ -71,6 +62,8 @@ void calc(){
         printf("o resultado é %f\n", resultado);}
 
     else {printf ("Por Favor escolha uma das 4 operações: soma(+), subtração(-), divisão(/) ou multiplicação(*)");}}}
+    
+//_____________________________________________________________________________________
 
 //criar uma função para a agenda
 void agenda(){
@@ -85,6 +78,9 @@ void agenda(){
     if (strcmp(agenda_cmd, "salvar") == 0){criar_contato();}
     if (strcmp(agenda_cmd, "verificar") == 0){ler_agenda();}
 }
+
+//_____________________________________________________________________________________
+
     //criar uma função para salvar os contatos em um arquivo de texto
     void criar_contato(){
 
@@ -120,6 +116,9 @@ void agenda(){
 
     //mostrar ao usuario a agenda e o nome
     printf("Contato Salvo (Nome: %s Tel: %s)\n", nome, telefone)}    
+    
+//_____________________________________________________________________________________
+
     //criar função para ler arquivos da agenda
     void ler_agenda() {
 
@@ -131,11 +130,28 @@ void agenda(){
             //avisar o usuario em caso de erro
             printf ("erro ao abrir a agenda");
             return;}
-    //criar variavel par receber o string do contato
+    //criar variavel para receber o string do contato
     char lendo_agenda [1000];
 
     //criar um loop para ler todos os contatos ao mesmo tempo
     while (fgets(lendo_agenda, 100, arquivoagenda) == NULL){
-    printf ("%s", lendo_agenda);
-    }}
-}
+    printf ("%s", lendo_agenda);}
+    
+    //encerrar leitura da agenda
+    break;}}
+
+//_____________________________________________________________________________________
+
+//criar prompt de comando para interagir com o usuario usando as funções
+int main (void){
+
+    while (1){
+           printf ("myterm>");
+           if(scanf ("%99s", comand) != 1) {break;}
+           clean_buffer ();
+           
+           if (strcmp(comand, "calc") == 0) {calc();}
+           if (strcmp(comand, "agenda") == 0) {agenda ();}
+           if (strcmp(comand, "exit") == 0){return 0;}}}
+           
+//fim do codigo
