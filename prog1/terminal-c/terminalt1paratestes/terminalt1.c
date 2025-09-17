@@ -153,6 +153,7 @@ int main (void){
            if(scanf ("%99s", comand) != 1) {break;}
            clean_buffer ();
            
+           if (strcmp (comand, "cmd") == 0) {printf ("calc: calculadora\n agenda: agenda\n exit: encerrar\n");}
            if (strcmp(comand, "calc") == 0) {calc();}
            if (strcmp(comand, "agenda") == 0) {agenda ();}
            if (strcmp(comand, "exit") == 0){return 0;}}}
