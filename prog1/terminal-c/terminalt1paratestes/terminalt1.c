@@ -120,7 +120,7 @@ void calc(){
     //criar um loop para ler todos os contatos ao mesmo tempo
     while (fgets(lendo_agenda, 100, arquivoagenda) != NULL){
     printf ("%s", lendo_agenda);
-    } return;}
+    }}
 
 //__________________________________________________________________________________
 
@@ -129,13 +129,18 @@ void agenda(){
     //pedir ao usuario que decida se quer ler ou salvar um novo contato
     //criar variavel para ler o comando do usuario
     char agenda_cmd[10];
+    
+    // inserindo dentro de um loop while para que o usario so saia da agenda quanto pedir com o exit
+    
+    while (1){
     printf ("salvar ou verificar?");
     scanf ("%s", agenda_cmd);
     clean_buffer();
 
-    if (strcmp(agenda_cmd, "exit") == 0){return;}
+    if (strcmp(agenda_cmd, "exit") == 0){break;}
     if (strcmp(agenda_cmd, "salvar") == 0){criar_contato();}
     if (strcmp(agenda_cmd, "verificar") == 0){ler_agenda();}
+    }
 }
 
 //_____________________________________________________________________________________
