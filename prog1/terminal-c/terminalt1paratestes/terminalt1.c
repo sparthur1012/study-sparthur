@@ -126,13 +126,13 @@ void calc(){
 //criar uma função para a agenda
 void agenda(){
     //pedir ao usuario que decida se quer ler ou salvar um novo contato
-    //criar variacel para ler o comando do usuario
+    //criar variavel para ler o comando do usuario
     char agenda_cmd[10];
     printf ("salvar ou verificar?");
     scanf ("%s\n", agenda_cmd);
     clean_buffer();
 
-    if (strcmp(agenda_cmd, "exit") == 0){break;}
+    if (strcmp(agenda_cmd, "exit") == 0){return;}
     if (strcmp(agenda_cmd, "salvar") == 0){criar_contato();}
     if (strcmp(agenda_cmd, "verificar") == 0){ler_agenda();}
 }
