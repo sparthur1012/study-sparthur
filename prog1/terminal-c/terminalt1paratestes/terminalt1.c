@@ -110,7 +110,7 @@ void calc(){
     FILE *arquivoagenda;
     arquivoagenda = fopen ("arquivoagenda.txt", "r");
     //verificar se o arquivo foi aberto corretamente
-        if (arquivoagenda == NULL){
+        if (arquivoagenda !== NULL){
             //avisar o usuario em caso de erro
             printf ("erro ao abrir a agenda");
             return;}
