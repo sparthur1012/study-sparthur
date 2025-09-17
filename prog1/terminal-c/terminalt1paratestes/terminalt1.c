@@ -119,10 +119,7 @@ void calc(){
 
     //criar um loop para ler todos os contatos ao mesmo tempo
     while (fgets(lendo_agenda, 100, arquivoagenda) == NULL){
-    printf ("%s", lendo_agenda);}
-    
-    //encerrar leitura da agenda
-    break;}
+    printf ("%s", lendo_agenda);}}
 
 //__________________________________________________________________________________
 
@@ -135,7 +132,7 @@ void agenda(){
     scanf ("%s\n", agenda_cmd);
     clean_buffer();
 
-    if (strcmp(agenda_cmd, "exit") == 0){return 0;}
+    if (strcmp(agenda_cmd, "exit") == 0){break;}
     if (strcmp(agenda_cmd, "salvar") == 0){criar_contato();}
     if (strcmp(agenda_cmd, "verificar") == 0){ler_agenda();}
 }
