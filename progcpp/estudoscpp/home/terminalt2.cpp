@@ -11,15 +11,38 @@ using namespace std;
 //functions to operations
 
 //calculator function
-void calc(const string& op, int num1, int num2) {
-	//handle operations
-    if (op == "+"){cout << num1 + num2 << endl;}
-    else if (op == "-"){cout << num1 - num2 << endl;}
-    else if (op == "*"){cout << num1 * num2 << endl;}
-    else if (op == "/"){
-        if (num2 == 0){cout << "ERROR: unpossible operation";} 
-        else {cout << num1 / num2 << endl;}
-    }}
+void calc (){
+    //variables to calculator
+            int num1, num2;
+            string op;
+        //possible operations
+        cout << "possible operations: sum(+), subtraction(-), multiplication(*) and division(/)";
+        
+        //keep inside calculator until exit command
+        while (true){
+            //how to use calculator
+            cout << "write the operator, the 1º number and the 2º number, on this order" << endl;
+            
+            //enter variable for operation
+            cin >> op; 
+            
+            //check if user wants to exit the calculator
+            if (op == "exit"){break;}
+            
+            //enter numbers
+            cin >> num1 >> num2;
+                   
+            //else call calculating function
+            if (op != "exit") {
+                //handle operations
+                if (op == "+"){cout << num1 + num2 << endl;}
+                else if (op == "-"){cout << num1 - num2 << endl;}
+                else if (op == "*"){cout << num1 * num2 << endl;}
+                else if (op == "/"){
+                if (num2 == 0){cout << "ERROR: unpossible operation";}
+                else {cout << num1 / num2 << endl;}}}
+        }
+}
 //___________________________________________________
 //main application entry point
 
@@ -46,38 +69,12 @@ int main() {
     if (cmd == "help"){
         cout <<"exit: to end operations" << endl;
         cout <<"calc: to open calulator" << endl;
-        cout <<"agenda: to open agenda" << endl;
-    }
+        cout <<"agenda: to open agenda" << endl;}
     
     //command to start calculator
-    if (cmd == "calc"){
-        //variables to calculator
-            int num1, num2;
-            string op;
-        //possible operations
-        cout << "possible operations: sum(+), subtraction(-), multiplication(*) and division(/)";
-        
-        //keep inside calculator until exit command
-        while (true){
-            //how to use calculator
-            cout << "write the operator, the 1º number and the 2º number, on this order" << endl;
-            
-            //enter variable for operation
-            cin >> op; 
-            
-            //check if user wants to exit the calculator
-            if (op == "exit"){break;}
-            
-            //enter numbers
-            cin >> num1 >> num2;
-                   
-            //else call calc function
-            if (op != "exit") {calc (op, num1, num2);}
-        }
-    }
+    if (cmd == "calc"){calc();}
+
     //if (cmd == "agenda"){}
     
     //user don't use a know command
-    else {cout << "unkow command" << endl;}
-    }
-}
+    else {cout << "unknow command" << endl;}}}
