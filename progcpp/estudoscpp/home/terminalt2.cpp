@@ -12,11 +12,12 @@ using namespace std;
 
 //calculator function
 void calc(const string& op, int num1, int num2) {
+	//handle operations
     if (op == "+"){cout << num1 + num2 << endl;}
     else if (op == "-"){cout << num1 - num2 << endl;}
     else if (op == "*"){cout << num1 * num2 << endl;}
     else if (op == "/"){
-        if (num2 == 0){cout << "ERROR: unpossible operation"} 
+        if (num2 == 0){cout << "ERROR: unpossible operation";} 
         else {cout << num1 / num2 << endl;}
     }}
 //___________________________________________________
@@ -37,7 +38,7 @@ int main() {
     cout <<"controlct> ";
     cin >> cmd;
     
-    //heandle user commands
+    //handle user commands
     //exit to end operations
     if (cmd == "exit"){return 0;}
     
@@ -61,16 +62,22 @@ int main() {
             //how to use calculator
             cout << "write the operator, the 1º number and the 2º number, on this order" << endl;
             
-            //enter variables
-            cin >> op >> num1 >> num2;
+            //enter variable for operation
+            cin >> op; 
             
             //check if user wants to exit the calculator
             if (op == "exit"){break;}
             
+            //enter numbers
+            cin >> num1 >> num2;
+                   
             //else call calc function
-            else {calc (op, num1, num2);}
+            if (op != "exit") {calc (op, num1, num2);}
         }
     }
-    if (cmd == "agenda"){}
+    //if (cmd == "agenda"){}
+    
+    //user don't use a know command
+    else {cout << "unkow command" << endl;}
     }
 }
