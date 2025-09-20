@@ -40,7 +40,9 @@ void calc (){
                 else if (op == "*"){cout << num1 * num2 << endl;}
                 else if (op == "/"){
                 if (num2 == 0){cout << "ERROR: unpossible operation";}
-                else {cout << num1 / num2 << endl;}}}
+                else {cout << num1 / num2 << endl;}
+		}
+	    }
         }
 }
 //___________________________________________________
@@ -77,4 +79,6 @@ int main() {
     //if (cmd == "agenda"){}
     
     //user don't use a know command
-    else {cout << "unknow command" << endl;}}}
+    else {cout << "unknow command" << endl;}
+    }
+}
