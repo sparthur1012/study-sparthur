@@ -9,12 +9,11 @@
 int vectcol1, vectcol2;
 //lines
 int vectln1, vectln2;
-int ln1[vectln1], ln2[vectln2];
 
 //function to create the 1º matrix
 void matrix (){
   int col1[vectcol1], col2[vectcol2];
-
+  int ln1[vectln1] ln2[vectln2];
 }
 
 //include main function
@@ -26,6 +25,8 @@ int (main) {
 
   std::cout << "lines number of 1º" << std::endl;
   std::cin >> lnnum1;
-  void matrix1 ();
+  void matrix ();
+
+
   
 }
